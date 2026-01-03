@@ -101,7 +101,7 @@ with left_col:
     age = c1.slider("Age", 15, 80, 25)
     gender = c2.selectbox("Gender", ["Female", "Male", "Other"])
     subscription = st.selectbox("Subscription Type", ["Free", "Premium", "Student", "Family"])
-    country = st.selectbox("Country", ["TR", 'CA', 'DE', 'AU', 'US', 'UK', 'IN', 'FR', 'PK' "Other"])
+    country = st.selectbox("Country", ["TR", 'CA', 'DE', 'AU', 'US', 'UK', 'IN', 'FR', 'PK', "Other"])
     device = st.selectbox("Device Type", ["Mobile", "Desktop", "Web"])
 
 with right_col:
@@ -178,7 +178,7 @@ if predict_btn:
     res_col1, res_col2, res_col3 = st.columns([1,2,1])
 
     with res_col2:
-        if probability >= 0.50:
+        if probability >= 0.30:
             # RİSKLİ DURUM
             st.error("⚠️ **HIGH RISK**")
             st.metric(label="Churn Probability", value=f"%{probability * 100:.1f}", delta="-Critical",delta_color="inverse")
